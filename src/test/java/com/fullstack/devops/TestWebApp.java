@@ -1,6 +1,8 @@
 package com.fullstack.devops;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -21,7 +23,21 @@ public class TestWebApp extends DevopsApplicationTests {
 	public void setup() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 	}
+	@Test
+	public void testAppHealth() throws Exception {
+		mockMvc.perform(get("/actuator/health")).andExpect(status().isOk())
+		
+		 .andExpect(content().contentType("application/vnd.spring-boot.actuator.v3+json"))
+		 .andExpect(jsonPath("$.status").value("UP"));
+		
+		/*
+		 * .andExpect(jsonPath("$.designation").value("manager"))
+		 * .andExpect(jsonPath("$.empId").value("1"))
+		 * .andExpect(jsonPath("$.salary").value(3000));
+		 */
+		 
 
+	}
 	@Test
 	public void testgetUsers() throws Exception {
 		mockMvc.perform(get("/api/users")).andExpect(status().isOk());

@@ -14,13 +14,29 @@
 </head>
 
 <body>
+<div>
+    <!-- ============================================================================ -->
+    <!-- This content is only used for static prototyping purposes (natural templates)-->
+    <!-- and is therefore entirely optional.                                           -->
+    <!-- ============================================================================ -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/" class="btn btn-warning"> <i class="fa fa-arrow-circle-left" aria-hidden="true"> Back to Actuator </i>
+						</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
 	<div class="container my-2">
 		<div class="card">
 			<div class="card-body">
 				<div th:switch="${users}" class="container my-5">
 					<div class="card bg-primary">
 						<div class="card-body text-center ">
-							<h6 class="card-text text-white">User Management System - Version 3</h6>
+							<h1 class="card-text text-white">User Management System - Version 3</h1>
 						</div>
 					</div>
 					<br>
