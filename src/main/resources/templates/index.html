@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>All Users</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+<!-- Header -->
+<div>
+    <!-- ============================================================================ -->
+    <!-- This content is only used for static prototyping purposes (natural templates)-->
+    <!-- and is therefore entirely optional.                                           -->
+    <!-- ============================================================================ -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/api/users" class="btn btn-warning"> <i class="fa fa-arrow-circle-left" aria-hidden="true">Back to application </i>
+						</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Insert content into the layouts/layout.html -->
+<th:block layout:fragment="content">
+   <div class="container my-2">
+		<div class="card">
+			<div class="card-body">
+    <div>
+    <div class="card bg-primary">
+						<div class="card-body text-center ">
+							<h1 class="card-text text-white">Spring Actuator</h1>
+						</div>
+					</div>
+        <br>
+        
+<!--             <h2 class="card-text text-white">Actuator endpoints allow you to monitor and interact with your application. -->
+<!--             Spring Boot includes a number of built-in endpoints and you can also add your own.</h2> -->
+        <div class="table-responsive">
+        <table class="table table-striped table-responsive-md table-bordered ">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/loggers}">loggers</a></p>
+                    </td>
+                    <td>
+                        <p>Displays loggers levels</p>
+                    </td>
+                </tr>
+               <!-- <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/autoconfig}">autoconfig</a></p>
+                    </td>
+                    <td>
+                        <p>Displays an auto-configuration report showing all auto-configuration candidates and the
+                        reason why they “were” or “were not” applied.</p>
+                    </td>
+                </tr> --> 
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/beans}">beans</a></p>
+                    </td>
+                    <td>
+                        <p>Displays a complete list of all the Spring Beans in your application</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/configprops}">configprops</a></p>
+                    </td>
+                    <td>
+                        <p>Displays a collated list of all <code class="literal">@ConfigurationProperties</code>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/threaddump}">dump</a></p>
+                    </td>
+                    <td>
+                        <p>Performs a thread dump.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/env}">env</a></p>
+                    </td>
+                    <td>
+                        <p>Exposes properties from Spring’s <code class="literal">ConfigurableEnvironment</code>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/health}">health</a></p>
+                    </td>
+                    <td>
+                        <p>Shows application health information (defaulting to a simple “OK” message).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/info}">info</a></p>
+                    </td>
+                    <td>
+                        <p>Displays arbitrary application info.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/metrics}">metrics</a></p>
+                    </td>
+                    <td>
+                        <p>Shows “metrics” information for the current application.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/mappings}">mappings</a></p>
+                    </td>
+                    <td>
+                        <p>Displays a collated list of all <code class="literal">@RequestMapping</code> paths.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="#" th:href="@{/actuator/trace}">trace</a></p>
+                    </td>
+                    <td>
+                        <p>Displays trace information (by default the last few HTTP requests).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</th:block>
+</body>
+</html>
