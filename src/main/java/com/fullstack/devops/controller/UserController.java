@@ -75,7 +75,7 @@ public class UserController {
 	@GetMapping(path = "/monitortest")
 	public String monitorTest() throws RecordNotFoundException {
 		
-		for(int i=0;i<=1000;i++) {
+		for(int i=0;i<=500;i++) {
 			repository.findAll();
 		}
 		return "redirect:/api/users";
