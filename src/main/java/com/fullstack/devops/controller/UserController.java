@@ -71,4 +71,13 @@ public class UserController {
 		repository.deleteAll();
 		return "redirect:/api/users";
 	}
+	
+	@GetMapping(path = "/monitortest")
+	public String monitorTest() throws RecordNotFoundException {
+		
+		for(int i=0;i<=10;i++) {
+			repository.findAll();
+		}
+		return "redirect:/api/users";
+	}
 }
